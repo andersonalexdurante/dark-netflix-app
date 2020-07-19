@@ -1,12 +1,18 @@
 import 'package:dark/utils/constants.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final _width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         elevation: 0,
         leading: Padding(
           padding: const EdgeInsets.only(left: 16.0),
@@ -37,6 +43,72 @@ class HomePage extends StatelessWidget {
           )
         ],
       ),
+      body: Stack(
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.black,
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(50),
+                  bottomRight: Radius.circular(50)),
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(40),
+                  bottomRight: Radius.circular(40)),
+              color: Colors.white,
+            ),
+            height: 100,
+            width: _width,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(left: 16.0, bottom: 10.0),
+                  child: Text('H E L L O',
+                      style: TextStyle(
+                          fontFamily: 'Mulish',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 25,
+                          letterSpacing: 3)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 16),
+                  child: Text('T R A V E L E R',
+                      style: TextStyle(
+                          fontFamily: 'Mulish',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 25,
+                          letterSpacing: 3)),
+                )
+              ],
+            ),
+          )
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.date_range), title: Text('When')),
+          BottomNavigationBarItem(icon: Icon(Icons.search), title: Text('Who')),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person), title: Text('Profile')),
+        ],
+        type: BottomNavigationBarType.fixed,
+        unselectedItemColor: Colors.grey,
+        selectedItemColor: Colors.black,
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.all_inclusive),
+        onPressed: () {},
+        backgroundColor: Colors.black,
+        elevation: 5,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
