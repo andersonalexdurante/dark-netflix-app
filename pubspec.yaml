@@ -47,6 +47,12 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/triquetra-icon.png
+    - assets/images/1888.webp
+    - assets/images/1921.webp
+    - assets/images/1953.webp
+    - assets/images/1986.webp
+    - assets/images/2019.webp
+    - assets/images/2052.webp
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

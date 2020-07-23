@@ -38,7 +38,7 @@ class _BottomBarDarkState extends State<BottomBarDark> {
 
   Widget buildItem(NavigationItem item, bool isSelected) {
     return AnimatedContainer(
-      duration: Duration(milliseconds: 500),
+      duration: Duration(milliseconds: 300),
       width: isSelected ? 100 : 50,
       height: 40,
       decoration: isSelected

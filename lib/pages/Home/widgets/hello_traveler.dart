@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 
-class HomeBody extends StatelessWidget {
+class HelloTraveler extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _width = MediaQuery.of(context).size.width;
     return Stack(
       children: <Widget>[
         Container(
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(50),
-                bottomRight: Radius.circular(50)),
-          ),
+          height: 100,
+          color: Colors.black,
         ),
         Container(
           decoration: BoxDecoration(
@@ -52,7 +48,7 @@ class HomeBody extends StatelessWidget {
               )
             ],
           ),
-        )
+        ),
       ],
     );
   }
